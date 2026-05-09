@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BosaTek | Web Design & Digital Setup for Local Businesses</title>
+  <meta name="description" content="BosaTek builds professional websites and configures all the free tools that get local businesses found online. $500 setup, $100/month. Des Moines, Iowa." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bosatek.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bosatek.com/" />
+  <meta property="og:title" content="BosaTek | Web Design & Digital Setup for Local Businesses" />
+  <meta property="og:description" content="Done-for-you web design and digital setup for local businesses. Website, Google Maps, business email, analytics, and more — starting at $500." />
+  <meta property="og:image" content="https://bosatek.com/assets/og-image.png" />
+  <!-- ⚠️ Create a 1200x630px og-image.png and add to assets/ for rich link previews -->
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BosaTek | Web Design & Digital Setup for Local Businesses" />
+  <meta name="twitter:description" content="Done-for-you web design and digital setup for local businesses. $500 setup, $100/month." />
+  <meta name="twitter:image" content="https://bosatek.com/assets/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "BosaTek",
+    "url": "https://bosatek.com",
+    "logo": "https://bosatek.com/assets/logo.svg",
+    "telephone": "+15154682767",
+    "email": "hello@bosatek.com",
+    "description": "Done-for-you web design and digital setup for local businesses. We build your website and configure all the free tools that get you found online.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Des Moines",
+      "addressRegion": "IA",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "BosaTek Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Hosting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Business Profile Setup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Email Setup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Analytics Setup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Booking Setup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Live Chat Widget" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- ═══ SECURITY META TAGS ═══════════════════════════════════════════
+       NOTE: These meta-tag equivalents cover client-side protections.
+       For full HTTP security headers (HSTS, frame-ancestors, report-uri),
+       add Cloudflare Transform Rules — see BOSATEK-SERVICES-REFERENCE.md.
+  ════════════════════════════════════════════════════════════════════ -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" />
+
+  <!-- ═══ GOOGLE SEARCH CONSOLE VERIFICATION ═══════════════════════════
+       Go to search.google.com/search-console → Add property → bosatek.com
+       Choose "HTML tag" verification method → paste the content= value below
+  ════════════════════════════════════════════════════════════════════ -->
+  <!-- <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" /> -->
+
+  <!-- ═══ GOOGLE ANALYTICS 4 ══════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJVPVHC6DQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HJVPVHC6DQ', { anonymize_ip: true });
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1a2340;
+      --navy2:  #232f55;
+      --orange: #f5a623;
+      --orange2:#e8941a;
+      --blue:   #4a7cf6;
+      --text:   #2d3748;
+      --muted:  #718096;
+      --light:  #f7f8fc;
+      --white:  #ffffff;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eef0f6;
+      padding: 0 5%; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta { background: var(--orange); color: var(--white) !important; padding: 9px 22px; border-radius: 50px; font-weight: 700 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--orange2) !important; }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: flex; align-items: center;
+      padding: 80px 5% 60px;
+      background: linear-gradient(135deg, #f7f8fc 0%, #eef2ff 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute;
+      top: -100px; right: -100px;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center; width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,0.12); color: var(--orange2);
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 3.8vw, 3.1rem); font-weight: 900;
+      color: var(--navy); line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p { font-size: 1.05rem; color: var(--muted); margin-bottom: 36px; max-width: 460px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange); color: var(--white);
+      padding: 14px 30px; border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--orange2); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent; color: var(--navy);
+      padding: 14px 30px; border-radius: 50px;
+      font-weight: 600; font-size: 0.95rem; text-decoration: none;
+      border: 2px solid #dde2f0;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+
+    /* Hero visual: checklist card */
+    .hero-visual { display: flex; justify-content: center; }
+    .hero-card {
+      background: white; border-radius: 20px; padding: 28px;
+      box-shadow: 0 20px 60px rgba(26,35,64,0.12); width: 100%; max-width: 380px;
+    }
+    .hero-card-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 18px; }
+    .check-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid #f5f5f8; font-size: 0.88rem;
+    }
+    .check-item:last-of-type { border-bottom: none; }
+    .check-icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .check-item .check-name { font-weight: 600; color: var(--navy); flex: 1; }
+    .check-item .check-status { font-size: 0.72rem; font-weight: 600; padding: 2px 9px; border-radius: 50px; }
+    .status-live { background: #e6f9f0; color: #22a06b; }
+    .status-done { background: #e8eeff; color: var(--blue); }
+    .hero-card-footer {
+      margin-top: 18px; padding-top: 16px; border-top: 1px solid #f0f2f8;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; color: var(--muted);
+    }
+    .hero-card-footer strong { color: var(--navy); }
+
+    /* SECTION BASICS */
+    section { padding: 90px 5%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--orange); margin-bottom: 12px; }
+    .section-title { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 800; color: var(--navy); line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 14px; }
+    .section-title span { color: var(--orange); }
+    .section-subtitle { font-size: 1rem; color: var(--muted); }
+    .divider { width: 50px; height: 4px; background: var(--orange); border-radius: 2px; margin: 14px 0 40px; }
+    .centered { text-align: center; }
+    .centered .divider { margin-left: auto; margin-right: auto; }
+    .centered .section-subtitle { max-width: 560px; margin: 0 auto; }
+
+    /* SERVICES */
+    .services { background: var(--light); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .service-card {
+      background: white; border-radius: var(--radius); padding: 26px;
+      border: 1px solid #eef0f8;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(26,35,64,0.1); transform: translateY(-3px); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+    .service-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .service-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+    .service-tool { display: inline-block; margin-top: 10px; font-size: 0.7rem; font-weight: 600; color: var(--blue); background: #e8eeff; padding: 3px 9px; border-radius: 50px; }
+
+    /* HOW IT WORKS */
+    .how { background: white; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; position: relative; }
+    .steps::before {
+      content: ''; position: absolute;
+      top: 32px; left: calc(16.66% + 20px); right: calc(16.66% + 20px);
+      height: 2px; background: linear-gradient(90deg, var(--orange), #f0c060, var(--orange));
+      z-index: 0;
+    }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-num {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--orange); color: white;
+      font-size: 1.3rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+    }
+    .step h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .step p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    /* OUR WORK */
+    .work { background: var(--light); }
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .work-card {
+      background: white; border-radius: 16px; overflow: hidden;
+      border: 1px solid #eef0f8;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .work-card:hover { box-shadow: 0 12px 40px rgba(26,35,64,0.12); transform: translateY(-4px); }
+    .work-preview {
+      height: 180px; display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; position: relative; overflow: hidden;
+    }
+    .work-preview-inner {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 2.2rem; gap: 8px;
+    }
+    .work-preview-label {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.25); padding: 3px 10px; border-radius: 50px;
+    }
+    .work-info { padding: 20px; }
+    .work-info h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .work-info p { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .work-tag { font-size: 0.68rem; font-weight: 600; padding: 3px 9px; border-radius: 50px; background: var(--light); color: var(--muted); }
+    .work-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; font-size: 0.8rem; font-weight: 600; color: var(--orange); text-decoration: none; }
+    .work-link:hover { text-decoration: underline; }
+
+    /* PRICING */
+    .pricing { background: white; }
+    .pricing-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      max-width: 760px; margin: 50px auto 0;
+    }
+    .price-card {
+      border-radius: 20px; padding: 36px;
+      border: 2px solid #eef0f8;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .price-card:hover { border-color: var(--orange); box-shadow: 0 8px 40px rgba(245,166,35,0.15); }
+    .price-card.featured { border-color: var(--orange); background: linear-gradient(135deg, #fffbf2, #fff8e8); }
+    .price-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); margin-bottom: 8px; }
+    .price-amount { font-size: 2.8rem; font-weight: 900; color: var(--navy); line-height: 1; }
+    .price-amount sup { font-size: 1.2rem; vertical-align: super; }
+    .price-period { font-size: 0.85rem; color: var(--muted); margin-top: 4px; margin-bottom: 24px; }
+    .price-desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+    .price-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .price-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--text); }
+    .price-list li::before { content: '✓'; color: var(--orange); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .price-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 20px; }
+
+    /* CONTACT */
+    #contact {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color: white;
+    }
+    .contact-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start;
+    }
+    .contact-left h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 16px; }
+    .contact-left h2 span { color: var(--orange); }
+    .contact-left p { color: rgba(255,255,255,0.65); font-size: 1rem; margin-bottom: 36px; }
+    .contact-info { display: flex; flex-direction: column; gap: 16px; }
+    .contact-info-item { display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,0.85); font-size: 0.93rem; }
+    .contact-info-icon { width: 40px; height: 40px; background: rgba(245,166,35,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-form-wrap { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 36px; }
+    .contact-form-wrap h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 6px; }
+    .contact-form-wrap > p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 26px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+    .form-group label { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.65); }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px; padding: 12px 16px; color: white;
+      font-size: 1rem; font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s, background 0.2s; outline: none; width: 100%;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); background: rgba(255,255,255,0.12); }
+    .form-group select option { background: var(--navy); color: white; }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; background: var(--orange); color: white; border: none; padding: 14px; border-radius: 50px; font-size: 0.95rem; font-weight: 700; font-family: 'Inter', sans-serif; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 4px; }
+    .form-submit:hover { background: var(--orange2); transform: translateY(-1px); }
+    .form-note { text-align: center; font-size: 0.73rem; color: rgba(255,255,255,0.35); margin-top: 12px; }
+    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success .si { font-size: 3rem; margin-bottom: 14px; }
+    .form-success h4 { font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 8px; }
+    .form-success p { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+
+    /* FOOTER */
+    footer { background: #111827; padding: 36px 5%; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo span { font-size: 1rem; font-weight: 800; color: white; }
+    .footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-copy { text-align: center; margin-top: 24px; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-links { display: none; }
+      .hamburger { display: flex; width: 48px; height: 48px; align-items: center; justify-content: center; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: white; padding: 20px 5%;
+        border-bottom: 1px solid #eef0f6; gap: 18px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 99;
+      }
+
+      /* Hero */
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-secondary { width: 100%; justify-content: center; }
+
+      /* Feature rows — single column, no reversed order confusion */
+      .feature-row { grid-template-columns: 1fr; gap: 28px; }
+      .feature-row.reverse .feature-text { order: 1; }
+      .feature-row.reverse .feature-visual { order: 2; }
+      .feature-visual { min-height: 200px; padding: 24px; }
+
+      /* Steps */
+      .steps { grid-template-columns: 1fr; gap: 28px; }
+      .steps::before { display: none; }
+
+      /* Work */
+      .work-grid { grid-template-columns: 1fr; }
+
+      /* Pricing */
+      .pricing-wrap { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+      .price-card { padding: 28px; }
+
+      /* Contact */
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+
+      /* Spacing */
+      section { padding: 60px 5%; }
+
+      /* Scroll-to-top — move up to avoid Tawk.to chat bubble */
+      #scrollTop { bottom: 90px; right: 20px; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .contact-form-wrap { padding: 20px; }
+    }
+
+    /* Fix iOS Safari auto-zoom on form inputs (must be >= 16px / 1rem) */
+    @media (max-width: 768px) {
+      .form-group input,
+      .form-group select,
+      .form-group textarea { font-size: 1rem; }
+    }
+
+    /* SCROLL TO TOP */
+    #scrollTop {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--orange); color: white; border: none;
+      font-size: 1.1rem; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(245,166,35,0.45);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.3s, transform 0.3s, background 0.2s;
+      pointer-events: none;
+    }
+    #scrollTop.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    #scrollTop:hover { background: var(--orange2); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="assets/logo.svg" alt="BosaTek" style="height:36px;width:auto;display:block" />
+    <span class="logo-text">BosaTek</span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">⚡ Done-For-You Digital Setup</div>
+      <h1>Your Local Business, <span>Found Online.</span></h1>
+      <p>We build your website and configure all the free tools that make local customers actually find you — Google Maps, business email, scheduling, reviews, and more. Done for you.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get Started →</a>
+        <a href="#services" class="btn-secondary">See What's Included</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-label">✅ Client Setup Checklist</div>
+
+        <div class="check-item">
+          <div class="check-icon" style="background:#fff4e0">🌐</div>
+          <span class="check-name">Website Live</span>
+          <span class="check-status status-live">Live</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#fce8ea">📍</div>
+          <span class="check-name">Google Business Profile</span>
+          <span class="check-status status-live">Optimized</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#e8eeff">✉️</div>
+          <span class="check-name">Business Email</span>
+          <span class="check-status status-done">Set Up</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#e6f9f0">📊</div>
+          <span class="check-name">Analytics & Tracking</span>
+          <span class="check-status status-done">Connected</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#f0e8ff">📅</div>
+          <span class="check-name">Online Booking</span>
+          <span class="check-status status-live">Live</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#e0f8ff">💬</div>
+          <span class="check-name">Live Chat Widget</span>
+          <span class="check-status status-done">Installed</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#fff0f0">📱</div>
+          <span class="check-name">Social Media Pages</span>
+          <span class="check-status status-done">Set Up</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon" style="background:#f0fff4">💳</div>
+          <span class="check-name">Payments & Invoicing</span>
+          <span class="check-status status-live">Active</span>
+        </div>
+
+        <div class="hero-card-footer">
+          🚀 <span><strong>8 services</strong> configured — ready to take customers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="centered">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Everything a local business needs to <span>get found</span></h2>
+      <p class="section-subtitle">We set up and configure the best free tools on the internet — so you look professional, show up in search, and never miss a customer.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🌐</span>
+        <h3>Website Design & Hosting</h3>
+        <p>A fast, professional website built for your business. Hosted for free — no monthly platform fees, ever.</p>
+        <span class="service-tool">GitHub Pages</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📍</span>
+        <h3>Google Business Profile</h3>
+        <p>We set up and fully optimize your Google Maps listing so customers can find you in local search.</p>
+        <span class="service-tool">Google — Free</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✉️</span>
+        <h3>Business Email Setup</h3>
+        <p>Get a professional email at your own domain — you@yourbusiness.com. Included in your monthly plan.</p>
+        <span class="service-tool">Zoho Mail — Free</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📊</span>
+        <h3>Analytics & Search Console</h3>
+        <p>Know exactly how many people visit your site, where they come from, and what they're searching for.</p>
+        <span class="service-tool">Google Analytics 4</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📅</span>
+        <h3>Online Booking</h3>
+        <p>Let customers book appointments directly from your website, 24/7, without phone tag.</p>
+        <span class="service-tool">Cal.com — Free</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💬</span>
+        <h3>Live Chat Widget</h3>
+        <p>Turn website visitors into leads with a live chat bubble. Get notified on your phone when someone messages.</p>
+        <span class="service-tool">Tawk.to — Free</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📱</span>
+        <h3>Social Media Setup</h3>
+        <p>Facebook and Instagram business pages properly configured, linked, and ready to represent your brand.</p>
+        <span class="service-tool">Meta — Free</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💳</span>
+        <h3>Payment & Invoicing</h3>
+        <p>Start accepting card payments and sending professional invoices online — no monthly fees, just a small processing rate.</p>
+        <span class="service-tool">Wave / Square — Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-inner">
+    <div class="centered">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">Up and running in <span>days, not months</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>We Talk</h3>
+        <p>Tell us about your business, what you need, and where you want to grow. No tech knowledge required on your end.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We Build & Configure</h3>
+        <p>We build your site and set up every tool — Google Business Profile, email, analytics, booking, the works.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You're Live</h3>
+        <p>Your business is online, professional, and findable. We stay on month-to-month to keep everything running.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="work" id="work">
+  <div class="section-inner">
+    <div class="centered">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Sites we've built for <span>real businesses</span></h2>
+      <p class="section-subtitle">Every site is custom-built — clean, fast, and designed to actually convert visitors into customers.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="work-grid">
+      <!-- Freedom Construction -->
+      <div class="work-card">
+        <div class="work-preview" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d)">
+          <div class="work-preview-inner">
+            <span>🏠</span>
+            <span class="work-preview-label">Freedom Construction</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3>Freedom Construction Iowa</h3>
+          <p>Construction company in Ankeny, IA. Clean landing page with project gallery, about section, and lead capture.</p>
+          <div class="work-tags">
+            <span class="work-tag">Website</span>
+            <span class="work-tag">Contact Form</span>
+            <span class="work-tag">Gallery</span>
+          </div>
+          <a href="https://freedomconstructioniowa.net" class="work-link" target="_blank" rel="noopener">View site →</a>
+        </div>
+      </div>
+
+      <!-- Ezan Center -->
+      <div class="work-card">
+        <div class="work-preview" style="background: linear-gradient(135deg, #1b6b3a, #2d9e58)">
+          <div class="work-preview-inner">
+            <span>🕌</span>
+            <span class="work-preview-label">IC Ezan</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3>Islamic Center Ezan of Greater Des Moines</h3>
+          <p>Community organization site with prayer times, bilingual donate flow, and location information.</p>
+          <div class="work-tags">
+            <span class="work-tag">Website</span>
+            <span class="work-tag">Bilingual</span>
+            <span class="work-tag">Donate</span>
+          </div>
+          <a href="https://iecezan.com" class="work-link" target="_blank" rel="noopener">View site →</a>
+        </div>
+      </div>
+
+      <!-- Your Business Here -->
+      <div class="work-card">
+        <div class="work-preview" style="background: linear-gradient(135deg, #2d3a6b, #4a5fa8)">
+          <div class="work-preview-inner">
+            <span>✨</span>
+            <span class="work-preview-label">Your Business</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3>Your Business Could Be Here</h3>
+          <p>We're actively taking on new clients. Let's build something great for your business — reach out and let's talk.</p>
+          <div class="work-tags">
+            <span class="work-tag">Website</span>
+            <span class="work-tag">Google Maps</span>
+            <span class="work-tag">Email</span>
+            <span class="work-tag">+ More</span>
+          </div>
+          <a href="#contact" class="work-link">Get started →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <div class="centered">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">Simple, honest <span>pricing</span></h2>
+      <p class="section-subtitle">No surprises. One setup fee to get everything built, then a low monthly rate to keep it all running.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="pricing-wrap">
+      <div class="price-card">
+        <div class="price-tag">One-Time</div>
+        <div class="price-amount"><sup>$</sup>500</div>
+        <div class="price-period">Setup fee — everything built & configured</div>
+        <div class="price-desc">We build your site and set up all your tools from scratch. One payment, done.</div>
+        <ul class="price-list">
+          <li>Custom website designed & launched</li>
+          <li>Google Business Profile fully optimized</li>
+          <li>Analytics & Search Console connected</li>
+          <li>Online booking page configured</li>
+          <li>Social media pages set up</li>
+          <li>Payment & invoicing tools configured</li>
+          <li>Live chat widget installed</li>
+          <li>Domain & hosting configured (Cloudflare)</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Get Started →</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-tag">Monthly</div>
+        <div class="price-amount"><sup>$</sup>100</div>
+        <div class="price-period">per month — ongoing support & maintenance</div>
+        <div class="price-desc">We keep everything running, updated, and professional so you can focus on your business.</div>
+        <ul class="price-list">
+          <li>Business email hosting included</li>
+          <li>Website updates & content changes</li>
+          <li>Google Business Profile management</li>
+          <li>Monthly analytics check-in</li>
+          <li>Technical support — call or text us</li>
+          <li>Form & booking monitoring</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Start Today →</a>
+        <div class="price-note">Cancel anytime. No long-term contracts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2>Let's get your business <span>found online.</span></h2>
+      <p>Drop us a message and we'll reach out fast — usually same day. No pushy sales calls, just a real conversation about what you need.</p>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div>
+            <div style="font-weight:600">(515) 468-2767</div>
+            <div style="font-size:0.8rem;opacity:0.55">Call or text anytime</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div>
+            <div style="font-weight:600">hello@bosatek.com</div>
+            <div style="font-size:0.8rem;opacity:0.55">We reply same day</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div style="font-weight:600">Des Moines, Iowa</div>
+            <div style="font-size:0.8rem;opacity:0.55">Serving businesses nationwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Send us a message</h3>
+      <p>Tell us about your business and we'll take it from there.</p>
+
+      <!-- ⚠️  Replace YOUR_FORM_ID with your Formspree form ID.
+           Sign up free at formspree.io → New Form → copy the ID (e.g. xpznkwrb) -->
+      <form id="contactForm" action="https://formspree.io/f/xrejynlp" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="first_name" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="jane@yourbusiness.com" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(515) 555-0100" />
+        </div>
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" name="business" placeholder="Your Business LLC" />
+        </div>
+        <div class="form-group">
+          <label>What do you need most?</label>
+          <select name="interest">
+            <option value="">Select one...</option>
+            <option>New Website</option>
+            <option>Google Business Profile Setup</option>
+            <option>Business Email</option>
+            <option>Full Setup Package ($500)</option>
+            <option>Monthly Support ($100/mo)</option>
+            <option>Not sure — let's talk</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your business (optional)</label>
+          <textarea name="message" placeholder="What does your business do? What's your biggest challenge right now?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+        <div class="form-note">We respect your privacy. No spam, ever.</div>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="si">🎉</div>
+        <h4>Got it — we'll be in touch!</h4>
+        <p>Thanks for reaching out. We'll get back to you very soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-logo">
+      <img src="assets/logo.svg" alt="BosaTek" style="height:28px;width:auto;display:block" />
+      <span>BosaTek</span>
+    </a>
+    <span class="footer-tagline">Building a better future where technology creates good jobs for everyone.</span>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 BosaTek. All rights reserved. · Des Moines, Iowa</div>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          btn.textContent = 'Something went wrong — email us at hello@bosatek.com';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Error — please email hello@bosatek.com directly';
+        btn.disabled = false;
+      }
+    });
+  }
+
+  // ═══ TAWK.TO LIVE CHAT ══════════════════════════════════════════════
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69ff5f969d0ed11c36b3feca/1jo6oqp63';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+
+  // Scroll-to-top visibility
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+        document.getElementById('navLinks').classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
