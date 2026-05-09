@@ -25,4 +25,4 @@ Live at [bosatek.com](https://bosatek.com) · GitHub: [Bosanac515](https://githu
 
 ## Contact
 
-hello@bosatek.com · (515) 850-8391
+hello@bosatek.com · (515) 468-2767
